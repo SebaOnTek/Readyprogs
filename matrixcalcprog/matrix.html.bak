@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<form>
+<h3> matrix 3x3		 macierz 3x3</h3>
+	<table >
+
+		<tr onchange="myFion()">
+			<td ><input onchange="myFion()" id="tab11" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion()" id="tab12" type="text" size="1" value="-1"/></td>
+			<td><input onchange="myFion()" id="tab13" type="text" size="1" value="1"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input id="tab21" type="text" size="1" value="4"/></td>
+			<td><input id="tab22" type="text" size="1" value="5"/></td>
+			<td><input id="tab23" type="text" size="1" value="3"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input id="tab31" type="text" size="1" value="-2"/></td>
+			<td><input id="tab32" type="text" size="1" value="0"/></td>
+			<td><input id="tab33" type="text" size="1" value="0"/></td>
+		
+        
+		</tr>
+	</table>
+</form>
+		<script>
+		function myFion() {
+			var x1 = document.getElementById("tab11").value;
+				 x2 = document.getElementById("tab12").value;
+				 x3 = document.getElementById("tab13").value;
+				  c1 = document.getElementById("tab21").value;
+				  c2 = document.getElementById("tab22").value;
+				 c3 = document.getElementById("tab23").value;
+				  v1 = document.getElementById("tab31").value;
+				  v2 = document.getElementById("tab32").value;
+				 v3 = document.getElementById("tab33").value;
+			var w=x1*c2*v3+x2*c3*v1+x3*c1*v2-x1*c3*v2-x2*c1*v3-x3*c2*v1
+		  document.getElementById("huk").innerHTML = "|Sarrus Method matrix determinant |="+w;
+		  document.getElementById("huk1").innerHTML = "|Wyznacznik macierzy metoda Sarrusa |="+w;
+		
+		}
+		</script>
+		<label onclick="myFion()" id="huk" >matrix determinant</label><br>
+		<label onclick="myFion()" id="huk1" >Wyznacznik macierzy</label>
+
+</BODY>
+</HTML>
