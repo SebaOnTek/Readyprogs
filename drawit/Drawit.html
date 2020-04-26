@@ -1,0 +1,446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> Drawtrainingtab </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<style>
+
+
+  
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 5px;
+  transition: 0.8s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</HEAD>
+
+<BODY>
+<form>
+<style>
+		#Tabze {
+border: 1px solid black;
+}
+</style>
+<fieldset>
+  <legend>Options:</legend>
+<table>
+
+		<tr>
+			<input id="tab1" type="text" size="1" value="20"/>r
+			<input id="tab2" type="text" size="1" value="0"/>rad
+		<tr>
+		</table>
+		
+
+<table ID="Tabze" >		
+
+		<td><input name="opswich" ID="ci" type="radio" >circle</input><input name="opswich" ID="lici" type="radio" checked>line with circle</input><input name="opswich" ID="li" type="radio">line</input></td>
+		</table>
+		
+		
+	</fieldset>
+
+</form>
+<canvas onclick="Drawit()" id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">
+</canvas>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Options')">Options</button>
+  <button class="tablinks" onclick="openCity(event, 'Mapka')">Matrix</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Functions</button>
+  <button class="tablinks" onclick="openCity(event, 'Szczecin')">Matrix</button>
+</div>
+
+<div id="Options" class="tabcontent">
+  <fieldset><form>
+
+<style>
+label {
+  border: 1px solid black;
+}
+#Tabone {
+border: 1px solid black;
+}
+</style>
+
+<table ID="Tabone" onClick="CC()">
+
+		<td><input name="cr" ID="re" type="radio">red</input>
+		 <input name="cr" ID="bl" type="radio">blue</input>
+		<input name="cr" ID="ye" type="radio">yellow</input>
+		<input name="cr" ID="gr" type="radio">green</input>
+		<input name="cr" ID="bla" type="radio">black  ||</input></td>
+		<td onClick="setlinepattern()">
+		<input   name="f" ID="solid" type="radio">solid</input>
+		<input  name="f" ID="dots" type="radio">dots</input>
+		<input  name="f" ID="brkline" type="radio">br line</input>
+		<input  name="f" ID="doli" type="radio">dot-line</input>
+		
+		
+		<button>clear</button>
+		</td>		
+		</td>
+		
+		</table>
+		<input onclick="setpencol()" ID="Lout" value="#002244"></input><label ID="lab"></label>
+		
+		</form>
+		</fieldset>
+  
+  
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <fieldset>
+ 
+  <input type="button"  onClick="sinfun()" name="nonam" >sine </input>
+		<input type="button"  onClick="cosfun()"  >cosine </input>
+		<input type="button"  onClick="drparab()" >parabolic </input>
+		<input type="button"  onClick="hiperb()" >hiperbolic </input>
+		<input type="checkbox" ID="flp" onClick="flipfunction()" >flip upsidedown </input>
+  </fieldset>
+  
+ <label ID="lab2">print</label>
+  <p>California gym.<a href="https://www.4shared.com/video/iNNnKHwEca/gymII.html" target="_blank">California Gym</a>.  </p>
+</div>
+
+<div id="Mapka" class="tabcontent">
+  <form>
+<h3> matrix 4x4		 macierz 4x4</h3>
+	<table onclick="myFion()">
+
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab11" type="text" size="1" value="1"/></td>
+			<td><input onchange="myFion()" id="tab12" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab13" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab14" type="text" size="1" value="1"/></td>
+		
+       		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab21" type="text" size="1" value="1"/></td>
+			<td><input onchange="myFion()" id="tab22" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab23" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion()" id="tab24" type="text" size="1" value="2"/></td>
+		
+       		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab31" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab32" type="text" size="1" value="7"/></td>
+			<td><input onchange="myFion()" id="tab33" type="text" size="1" value="5"/></td>
+			<td><input onchange="myFion()" id="tab34" type="text" size="1" value="2"/></td>
+		
+       		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab41" type="text" size="1" value="-1"/></td>
+			<td><input onchange="myFion()" id="tab42" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion()" id="tab43" type="text" size="1" value="-6"/></td>
+			<td><input onchange="myFion()" id="tab44" type="text" size="1" value="3"/></td>
+		
+       		</tr>
+	</table>
+	<label onclick="myFion()" id="huk" >matrix determinant</label><br>
+		<label onclick="myFion()" id="huk1" >wyznacznik macierzy</label>
+</form>
+<form>
+<h3> matrix 3x3		 macierz 3x3</h3>
+	<table onclick="myF()">
+
+		<tr onchange="myF()">
+			<td ><input onchange="myF()" id="tab11" type="text" size="1" value="4"/></td>
+			<td><input onchange="myF()" id="tab12" type="text" size="1" value="-1"/></td>
+			<td><input onchange="myF()" id="tab13" type="text" size="1" value="1"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myF()" id="tab21" type="text" size="1" value="4"/></td>
+			<td><input onchange="myF()" id="tab22" type="text" size="1" value="5"/></td>
+			<td><input onchange="myF()" id="tab23" type="text" size="1" value="3"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myF()" id="tab31" type="text" size="1" value="-2"/></td>
+			<td><input onchange="myF()" id="tab32" type="text" size="1" value="0"/></td>
+			<td><input onchange="myF()" id="tab33" type="text" size="1" value="0"/></td>
+		
+        
+		</tr>
+	</table>
+	<label onclick="myF()" id="huk2" >matrix determinant</label><br>
+		<label onclick="myF()" id="huk3" >wyznacznik macierzy</label>
+	
+</form>
+
+  
+  
+ 
+  </div>
+
+
+		
+		<script>
+		
+
+		function myF() {
+			var x1 = document.getElementById("tab11").value;
+				 x2 = document.getElementById("tab12").value;
+				 x3 = document.getElementById("tab13").value;
+				  c1 = document.getElementById("tab21").value;
+				  c2 = document.getElementById("tab22").value;
+				 c3 = document.getElementById("tab23").value;
+				  v1 = document.getElementById("tab31").value;
+				  v2 = document.getElementById("tab32").value;
+				 v3 = document.getElementById("tab33").value;
+			var w=x1*c2*v3+x2*c3*v1+x3*c1*v2-x1*c3*v2-x2*c1*v3-x3*c2*v1
+		  document.getElementById("huk2").innerHTML = "|Sarrus Method matrix determinant |="+w;
+		  document.getElementById("huk3").innerHTML = "|Wyznacznik macierzy metoda Sarrusa |="+w;
+		
+		} 
+
+
+		function myFion() {
+			var x1 = document.getElementById("tab11").value;
+				  x2 = document.getElementById("tab12").value;
+				   x3 = document.getElementById("tab13").value;
+				    x4 = document.getElementById("tab14").value;
+				  c1 = document.getElementById("tab21").value;
+				    c2 = document.getElementById("tab22").value;
+				     c3 = document.getElementById("tab23").value;
+				      c4 = document.getElementById("tab24").value;
+				  v1 = document.getElementById("tab31").value;
+				    v2 = document.getElementById("tab32").value;
+				     v3 = document.getElementById("tab33").value;
+				      v4 = document.getElementById("tab34").value;
+				 b1 = document.getElementById("tab41").value;
+				   b2 = document.getElementById("tab42").value;
+				    b3 = document.getElementById("tab43").value;
+				     b4 = document.getElementById("tab44").value;
+			var w=-b1*(x2*c3*v4+x3*c4*v2+x4*c2*v3-x4*c3*v2-x3*c2*v4-x2*c4*v3)+ 
+			b2*(x1*c3*v4+x3*c4*v1+x4*c1*v3-x4*c3*v1-x3*c1*v4-x1*c4*v3)- 
+			b3*(x1*c2*v4+x2*c4*v1+x4*c1*v2-x4*c2*v1-x2*c1*v4-x1*c4*v2)+ 
+			b4*(x1*c2*v3+x2*c3*v1+x3*c1*v2-x3*c2*v1-x2*c1*v3-x1*c3*v2);
+		  document.getElementById("huk").innerHTML = "|Laplace expansion method matrix determinant |= "+w;
+		  document.getElementById("huk1").innerHTML = "|Wyznacznik macierzy rozwiniêcie Laplace'a |= "+w;
+		
+		}
+		
+
+		function openCity(evt, cityName) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+	   tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+	  tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(cityName).style.display = "block";
+	  evt.currentTarget.className += " active";
+		}
+
+var zx,zy,p1,p2,p3,p4,fl;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+fl=1;
+function flipfunction(){
+if (document.getElementById("flp").checked)
+{fl=-1
+
+}else{
+fl=1
+}
+
+}
+
+function sinfun(){
+ctx.moveTo(0,200);
+ctx.strokeStyle=document.getElementById("Lout").value;
+document.getElementById("lab2").innerHTML=document.getElementById("Lout").value;
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 3600; j++) {
+		uu = Math.sin(j/180*3.14);
+
+    
+ctx.lineTo(j,-fl*uu*70+200);
+  }
+  ctx.moveTo(0,200)
+}
+ctx.stroke();
+}
+function cosfun(){
+ctx.strokeStyle=document.getElementById("Lout").value;
+if (document.getElementById("flp").checked)
+{ctx.moveTo(0,270)
+}else{
+ctx.moveTo(0,130)}
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 3600; j++) {
+		uu = Math.cos(j/180*3.14);
+
+    
+ctx.lineTo(j,uu*-fl*70+200);
+  }
+ if (document.getElementById("flp").checked)
+{ctx.moveTo(0,270)
+}else{
+  ctx.moveTo(0,130)}
+}
+ctx.stroke();
+}
+
+function drparab(){
+ctx.strokeStyle=document.getElementById("Lout").value;
+if (document.getElementById("flp").checked)
+{ctx.moveTo(400,590)
+}else{
+ctx.moveTo(400,10)}
+for (let j = 0; j < 550; j++) {
+		uu = Math.sqrt(j);
+	
+	if (document.getElementById("flp").checked)
+	{ctx.lineTo(uu*15+400,-j+590)
+	}else{	
+    ctx.lineTo(uu*15+400,j+10)}
+    
+  }
+  if (document.getElementById("flp").checked)
+{ctx.moveTo(400,590)
+}else{
+ctx.moveTo(400,10)}
+  for (let j = 0; j < 550; j++) {
+		
+		oo = -Math.sqrt(j);
+if (document.getElementById("flp").checked)
+	{ctx.lineTo(oo*15+400,-j+590)
+	}else{	
+    ctx.lineTo(oo*15+400,j+10)}
+    
+    
+  }
+  ctx.stroke();
+  
+}
+function hiperb(){
+var m;
+ctx.moveTo(0,300)
+for (let m = -400;m < 0 ;m++)
+{pp = -(1/m*10);
+ctx.lineTo(m+400,pp*fl*150+300)
+}
+ctx.stroke();
+if (document.getElementById("flp").checked)
+	{ctx.moveTo(400,600)}
+	else{ctx.moveTo(400,0)	}
+
+for (let m = 0;m < 400 ;m++)
+{pp = -(1/m*10);
+ctx.lineTo(m+400,pp*fl*150+300)
+}
+ctx.stroke();
+}
+
+function setlinepattern() {
+
+ if (document.getElementById("solid").checked)
+ {p1=0;p2=0;p3=0;p4=0
+ }
+
+if (document.getElementById("dots").checked)
+ {p1=1;p2=1;p3=0;p4=0
+ }
+ if (document.getElementById("brkline").checked)
+ {p1=4;p2=7;p3=0;p4=0
+ } 
+ if (document.getElementById("doli").checked)
+ {p1=4;p2=5;p3=1;p4=5  
+ }
+}
+
+function CC(){
+
+if (document.getElementById("re").checked)
+{ctx.strokeStyle = 'red';}
+if (document.getElementById("bl").checked)
+{ctx.strokeStyle = 'blue';}
+if (document.getElementById("ye").checked)
+{ctx.strokeStyle = 'yellow';}
+if (document.getElementById("gr").checked)
+{ctx.strokeStyle = 'green';}
+if (document.getElementById("bla").checked)
+{ctx.strokeStyle = 'black';}
+document.getElementById("Lout").value=ctx.strokeStyle;
+}
+
+function setpencol(){
+ctx.strokeStyle = document.getElementById("Lout").value;
+}
+
+function Drawit(){
+var yy = event.clientY-100;
+var xx = event.clientX-10;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.setLineDash([p1,p2,p3,p4]);
+
+
+if (document.getElementById("ci").checked)
+{
+ctx.arc(xx,yy-7, document.getElementById("tab1").value, document.getElementById("tab2").value, 2 * Math.PI);
+}
+if (document.getElementById("lici").checked)
+{ctx.arc(xx,yy-7, document.getElementById("tab1").value, document.getElementById("tab2").value, 2 * Math.PI);
+ctx.moveTo(zx+1,zy-9);
+ctx.lineTo(xx+1,yy-9);
+
+
+}
+if (document.getElementById("li").checked)
+{
+ctx.moveTo(zx+1,zy-9);
+ctx.lineTo(xx+1,yy-9);
+
+}
+ctx.stroke();
+zx=xx;zy=yy;
+}
+
+		</script>
+</BODY>
+</HTML>
