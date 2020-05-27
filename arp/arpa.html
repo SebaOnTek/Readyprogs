@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> Arpa </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="Sebastian">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<style>
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+}
+</style>
+	<fieldset onclick="calc()">
+	
+  <legend>Bearings:</legend>
+	
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Bearing 1:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><label for Br1>Ang1:</label><input id="Br1" maxlength="8" size="5" value="230"></input><sup>o</sup> <label for d1>dist1:</label><input id="d1" maxlength="8" size="5" value="8519.2">m</input></td>
+        </tr>
+		
+    </tbody>
+</table>
+<table>
+<thead>
+        <tr>
+            <th colspan="2">Bearing 2:</th>
+        </tr>
+    </thead>
+	<tbody>
+<tr>
+			<td><label for Br2>Ang2:</label><input id="Br2" maxlength="8" size="5"  value="217"></input><sup>o</sup> <label for d2>dist2:</label><input id="d2" maxlength="8" size="5" value="8704.4">m</input></td>
+			
+		</tr>
+		</tbody>
+</table>
+
+   <table>
+<thead>
+        <tr>
+            <th colspan="2">Time:</th>
+        </tr>
+    </thead>
+   <tbody>
+<tr>
+		
+			<td><input Id="time" maxlength="8" size="5"  value="3">min</input></td>
+		</tr>
+		</tbody>
+</table>
+
+<label Id="slab"></label>
+<label Id="res"></label>
+<label Id="outl1"></label><br>
+	
+	 </fieldset>
+  <canvas onClick="backgrnet()" Id="mycanv" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas> 
+	
+	<script>
+
+     
+var canvas = document.getElementById("mycanv");
+var ctx = canvas.getContext("2d");
+
+function calc(){
+
+
+var d1,d2,nr1,nr2,dt;
+var dx,dy,vx,vy,vro,x1,x2,y1,y2,vsp,zowc;
+d1=document.getElementById("d1").value;d2=document.getElementById("d2").value;nr1=document.getElementById("Br1").value;nr2=document.getElementById("Br2").value;dt=document.getElementById("time").value;
+document.getElementById("res").innerHTML="|time|"+dt;
+var dsc = dt*60;
+x1 = d1*Math.cos(nr1/180*3.1415);
+x2 = d2*Math.cos(nr2/180*3.1415);
+y1 = d1*Math.sin(nr1/180*3.1415);
+y2 = d2*Math.sin(nr2/180*3.1415);
+dx = x2 - x1 ;
+dy = y2 - y1 ;
+vx=(dx/dsc);vy=(dy/dsc);vro=Math.sqrt(vx*vx+vy*vy);zowc=Math.sqrt(dx*dx+dy*dy);
+Dmin = (x1*vy-y1*vx)/vro;
+h1=x1,h2=x2,j1=y1,j2=y2;
+document.getElementById("outl1").innerHTML="| rel speed|"+vro+" |dd|="+zowc+" |Dmin|="+Dmin/185.22+"kbl";
+backgrnet()
+}
+
+function vector(h1,j1,h2,j2,){
+ctx.strokeStyle = 'blue';
+ctx.moveTo(200+h1/100,200+j1/100);
+ctx.lineTo(200+h2/100,200+j2/100);
+ctx.stroke();
+document.getElementById("slab").innerHTML="checked";
+ctx.reset;
+
+}
+
+function xy(){
+ 
+ctx.strokeStyle = 'green';
+for (let f=0;f<11 ;f++)
+{
+ctx.moveTo(200+f*20,200)
+ctx.arc(200, 200, f*20, 0, 2 * Math.PI);
+}
+ctx.stroke();
+}
+
+function backgrnet(){
+vector(h1,j1,h2,j2);
+xy();
+
+ctx.strokeStyle = 'black';
+ctx.beginPath();
+ctx.moveTo(200,0);
+ctx.lineTo(200,400);
+ctx.stroke();
+ctx.moveTo(400,200);
+ctx.lineTo(0,200);
+ctx.stroke();
+document.getElementById("slab").innerHTML="checked";
+ctx.reset;
+}
+
+
+
+</script>
+		
+</BODY>
+</HTML>
