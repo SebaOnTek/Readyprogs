@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> Matrix DetA </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<form>
+<h3> matrix 3x3		 macierz 3x3</h3>
+	<table onclick="myFion12()">
+
+		<tr onchange="myFion12()">
+			<td ><input onchange="myFion12()" id="tab1121" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion12()" id="tab1221" type="text" size="1" value="-1"/></td>
+			<td><input onchange="myFion12()" id="tab1321" type="text" size="1" value="1"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion12()">
+			<td><input onchange="myFion12()" id="tab2121" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion12()" id="tab2221" type="text" size="1" value="5"/></td>
+			<td><input onchange="myFion12()" id="tab2321" type="text" size="1" value="3"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion12()">
+			<td><input onchange="myFion12()" id="tab3121" type="text" size="1" value="-2"/></td>
+			<td><input onchange="myFion12()" id="tab3221" type="text" size="1" value="0"/></td>
+			<td><input onchange="myFion12()" id="tab3321" type="text" size="1" value="0"/></td>
+		
+        
+		</tr>
+	</table>
+
+</form>
+		<script>
+
+
+		function myFion12() {
+			var x1 = document.getElementById("tab1121").value;
+				 x2 = document.getElementById("tab1221").value;
+				 x3 = document.getElementById("tab1321").value;
+				  c1 = document.getElementById("tab2121").value;
+				  c2 = document.getElementById("tab2221").value;
+				 c3 = document.getElementById("tab2321").value;
+				  v1 = document.getElementById("tab3121").value;
+				  v2 = document.getElementById("tab3221").value;
+				 v3 = document.getElementById("tab3321").value;
+			var wb=x1*c2*v3+x2*c3*v1+x3*c1*v2-x1*c3*v2-x2*c1*v3-x3*c2*v1
+		  document.getElementById("huk12").innerHTML = "|Sarrus Method matrix determinant |="+wb;
+		
+		}
+		</script>
+		<label onclick="myFion12()" id="huk12" >matrix determinant</label><br>
+		 <form>
+<h3> matrix 4x4		 macierz 4x4</h3>
+	<table onclick="myFion()">
+
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab11" type="text" size="1" value="1"/></td>
+			<td><input onchange="myFion()" id="tab12" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab13" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab14" type="text" size="1" value="1"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab21" type="text" size="1" value="1"/></td>
+			<td><input onchange="myFion()" id="tab22" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab23" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion()" id="tab24" type="text" size="1" value="2"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab31" type="text" size="1" value="2"/></td>
+			<td><input onchange="myFion()" id="tab32" type="text" size="1" value="7"/></td>
+			<td><input onchange="myFion()" id="tab33" type="text" size="1" value="5"/></td>
+			<td><input onchange="myFion()" id="tab34" type="text" size="1" value="2"/></td>
+		
+        
+		</tr>
+		<tr onchange="myFion()">
+			<td><input onchange="myFion()" id="tab41" type="text" size="1" value="-1"/></td>
+			<td><input onchange="myFion()" id="tab42" type="text" size="1" value="4"/></td>
+			<td><input onchange="myFion()" id="tab43" type="text" size="1" value="-6"/></td>
+			<td><input onchange="myFion()" id="tab44" type="text" size="1" value="3"/></td>
+		
+        
+		</tr>
+	</table>
+</form>
+		<script>
+		function myFion() {
+			var x1 = document.getElementById("tab11").value;
+				  x2 = document.getElementById("tab12").value;
+				   x3 = document.getElementById("tab13").value;
+				    x4 = document.getElementById("tab14").value;
+				  c1 = document.getElementById("tab21").value;
+				    c2 = document.getElementById("tab22").value;
+				     c3 = document.getElementById("tab23").value;
+				      c4 = document.getElementById("tab24").value;
+				  v1 = document.getElementById("tab31").value;
+				    v2 = document.getElementById("tab32").value;
+				     v3 = document.getElementById("tab33").value;
+				      v4 = document.getElementById("tab34").value;
+				 b1 = document.getElementById("tab41").value;
+				   b2 = document.getElementById("tab42").value;
+				    b3 = document.getElementById("tab43").value;
+				     b4 = document.getElementById("tab44").value;
+			var w=-b1*(x2*c3*v4+x3*c4*v2+x4*c2*v3-x4*c3*v2-x3*c2*v4-x2*c4*v3)+ 
+			b2*(x1*c3*v4+x3*c4*v1+x4*c1*v3-x4*c3*v1-x3*c1*v4-x1*c4*v3)- 
+			b3*(x1*c2*v4+x2*c4*v1+x4*c1*v2-x4*c2*v1-x2*c1*v4-x1*c4*v2)+ 
+			b4*(x1*c2*v3+x2*c3*v1+x3*c1*v2-x3*c2*v1-x2*c1*v3-x1*c3*v2);
+		  document.getElementById("huk").innerHTML = "|Laplace expansion method matrix determinant |= "+w;
+		
+		}
+		</script>
+		<label onclick="myFion()" id="huk" >matrix determinant</label><br>
+		<label onclick="myFion()" id="huk1" >detA</label>
+
+</BODY>
+</HTML>
